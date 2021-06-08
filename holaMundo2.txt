@@ -1,0 +1,15 @@
+def division(dividendo,divisor):
+    res=dividento/divisor
+    return res
+def suma(numero1,numero2):
+    r=numero1+numero2
+    return return
+try:
+    s=suma(34,21)
+    print('El resultado de la suma es:',s )
+    res=division(23,9)
+    print('El resultado de la division es:',res)
+    print('Leeremos un archivo')
+    f=open('holaMundo.txt','r')
+    for linea in f:
+        print(linea,end=' ')

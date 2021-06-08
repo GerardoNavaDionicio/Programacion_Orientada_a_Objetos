@@ -1,5 +1,17 @@
-matriz[[1,2,3],[2,12,6],[1,0,-3],[0,-1,0]]
-for i in range (4):
-    print('\n')
-    for j in range(3):
-        print(matriz[i][j], end = ',')
+def division(dividendo,divisor):
+    res = dividendo/divisor
+    return res
+
+try:
+    #el codifo se va ejecutar
+    div = division (23,0)
+    print ("El resultado es:",div)
+
+except ArithmeticError   as err:
+    #el codigo que se va ejecutar si hay error
+    print("Eres pendejo o k?",err)
+
+
+
+
+
