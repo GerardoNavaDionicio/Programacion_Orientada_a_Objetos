@@ -34,8 +34,6 @@ class App():
         self.tbUser.focus_set()
         self.tbPass.bind('Button-3>',self.solicitaPass)
         self.principal.mainloop()
-
-
     def solicitaPass(self,evento):
         self.passw.set("   ")
         messagebox.showwarning('Warning','Ingresa tu pass')
@@ -64,6 +62,8 @@ class App():
             print('Acceso denegado')
             self.passw.set("")
             self.tbPass.focus_set()
+
+
 def main():
     mi_App = App()
     return 0
