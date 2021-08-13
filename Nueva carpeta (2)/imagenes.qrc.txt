@@ -1,0 +1,8 @@
+  
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource prefix="/imagenes">
+    <file alias="Qt.png">C:\Users\GenaThink\Documents\POO\Nava Dionicio Gerardo POO\Programacion_Orientada_a_Objetos\proyecto2</file>
+    <file alias="Python.png">C:\Users\GenaThink\Documents\POO\Nava Dionicio Gerardo POO\Programacion_Orientada_a_Objetos\proyecto2</file>
+</qresource>
+</RCC>
