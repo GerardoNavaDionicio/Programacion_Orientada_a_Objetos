@@ -1,10 +1,12 @@
 import sys
 import pymysql
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QLineEdit
+from PyQt5.QtWidgets import QApplication, QButtonGroup, QMainWindow, QMessageBox, QLineEdit
+from pymysql.cursors import Cursor
 from int import Ui_MainWindow
 from ConexionBD import Conexion
-
+import webbrowser
+pedidos={}
 class proyecto_int(QMainWindow):
     def __init__(self):
         super(proyecto_int, self).__init__()
@@ -14,13 +16,30 @@ class proyecto_int(QMainWindow):
         self.ui.telefono_cliente
         self.ui.direccion_cliente
         self.ui.numero_cliente
-        self.ui.repartidor_datos
-        self.ui.enviar_botton.clicked.connect(self.Insertar)
+        self.ui.distancia_datos
+        self.ui.vehiculo_datos
+        #self.ui.ayuda_text.triggered.connect(self.chems)
+        self.ui.helpBT.triggered.connect(self.chems)
+#        self.ui.enviar_botton.clicked.connect(self.Insertar)
+        self.ui.guardar_botton.clicked.connect(self.Guardar)
+
         self.c = Conexion()
         self.conn = self.c.CrearConexion()
         self.cursor = self.conn.cursor()
-    def Insertar(self):
-        rep = self.ui.repartidor_datos.text()
+        self.RadioGroup = QButtonGroup()
+        self.RadioGroup.addButton(self.ui.rb1)  
+        self.RadioGroup.addButton(self.ui.rb2)
+        self.RadioGroup.addButton(self.ui.rb3)
+        self.RadioGroup.addButton(self.ui.rb4)
+        self.RadioGroup.addButton(self.ui.rb5)
+        self.RadioGroup.addButton(self.ui.rb6)
+        self.RadioGroup.addButton(self.ui.rb7)
+        self.RadioGroup.addButton(self.ui.rb8)
+        self.RadioGroup.addButton(self.ui.rb9)
+        self.RadioGroup.addButton(self.ui.rb10) 
+    def Guardar(self):
+        km = self.ui.distancia_datos.text()
+        car =  self.ui.vehiculo_datos.text()
         num = self.ui.numero_cliente.text()
         tel = self.ui.telefono_cliente.text()
         nom = self.ui.nombre_cliente.text() 
@@ -31,6 +50,13 @@ class proyecto_int(QMainWindow):
         row = self.cursor.fetchone()
         self.conn.commit()
         self.limpiar()
+        pedidos[km]
+        
+
+
+
+
+
     def pedido(self):
         if self.ui.rb1.isChecked():
             return 1
@@ -57,22 +83,26 @@ class proyecto_int(QMainWindow):
         self.ui.telefono_cliente.setText('')
         self.ui.nombre_cliente.setText('')
         self.ui.direccion_cliente.setText('')
-        self.ui.repartidor_datos.setText('')
-        self.ui.rb1.setChecked(True)
-        self.ui.rb2.setChecked(True)
-        self.ui.rb3.setChecked(True)
-        self.ui.rb4.setChecked(True)
-        self.ui.rb5.setChecked(True)
-        self.ui.rb6.setChecked(True)
-        self.ui.rb7.setChecked(True)
-        self.ui.rb8.setChecked(True)
-        self.ui.rb9.setChecked(True)
-        self.ui.rb10.setChecked(True)
-        self.ui.rb11.setChecked(True)
-       
+        self.ui.distancia_datos.setText('')
+        self.ui.vehiculo_datos.setText('')
+        self.RadioGroup.setExclusive(False)
+        self.ui.rb1.setChecked(False)
+        self.ui.rb2.setChecked(False)
+        self.ui.rb3.setChecked(False)
+        self.ui.rb4.setChecked(False)
+        self.ui.rb5.setChecked(False)
+        self.ui.rb6.setChecked(False)
+        self.ui.rb7.setChecked(False)
+        self.ui.rb8.setChecked(False)
+        self.ui.rb9.setChecked(False)
+        self.ui.rb10.setChecked(False)
+        self.RadioGroup.setExclusive(True)
+    def chems(self):
+        webbrowser.open("https://m.facebook.com/permalink.php?story_fbid=105737101284775&id=105736124618206&substory_index=0")
+
 if __name__ == '__main__':
     app = QApplication([])
     ventana = proyecto_int()
     ventana.show()
     sys.exit(app.exec())
-
+    

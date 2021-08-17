@@ -30,24 +30,19 @@ class Login(QMainWindow):
             print("Contraseña:", self.ui.pass_datos.text())
             self.Borrar()
             QApplication.quit()
-            #proy = proyecto_int()
-            #proy.show()
-            #self.abrir_ventana()
             self.proy.show()
+            self.hide()
+
+            
         else:
             QMessageBox.information(self, "Alerta", "Acceso denegado", QMessageBox.Ok)
             print("Acceso Incorrecto")
             self.ui.usuario_datos.setText('')
             self.ui.pass_datos.setText('')
-
-    def abrir_ventana(self):
-        
-        '''app_proy = QApplication([])
-        ventana_proy = proyecto_int()
-        ventana_proy.show()
-        sys.exit(app_proy.exec())''' 
-        
-
+            QApplication.quit()
+            return 0
+            
+            
     def Consultar(self, passw, user):
         sentencia = "SELECT * FROM usuarios WHERE usuario = '%s'" % user
         self.cursor.execute(sentencia)

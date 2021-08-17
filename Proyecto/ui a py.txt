@@ -1,0 +1,14 @@
+pyuic5 Login.ui -o Login.py
+
+cd C:\Users\GenaThink\Documents\POO\Nava Dionicio Gerardo POO\Programacion_Orientada_a_Objetos\Proyecto
+pyuic5 Proyecto_bueno.ui -o proyecto.py
+pyuic5 Proyecto_bueno2.ui -o proyecto2.py
+
+
+
+cd C:\Users\GenaThink\Documents\POO\Nava Dionicio Gerardo POO\Programacion_Orientada_a_Objetos\Proyecto
+pyuic5 int.ui -o int.py
+
+
+
+pyuic5 Login.ui -o Login2.py
