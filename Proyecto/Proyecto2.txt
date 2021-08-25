@@ -1,0 +1,78 @@
+create table cliente(
+numero int unsigned not null auto_increment,
+telefono int unsigned not null,
+nombre varchar(30),
+direccion varchar(100),
+pedido int unsigned not null,
+primary key (numero));
+
+create table repartidor(
+numeroID int unsigned not null auto_increment,
+nomRep varchar(30),
+primary key (numeroID));
+
+
+create table pedido(
+id int unsigned not null auto_increment,
+nombrePe varchar(50),
+precio int unsigned not null,
+primary key (id));
+
+create table vehiculo(
+placa int unsigned not null auto_increment,
+tipo_vehiculo varchar(50),
+primary key (placa));
+
+create table Usuarios(
+idUsuario int unsigned not null auto_increment,
+usuario varchar (30) not null,
+password varchar (10) not null,
+primary key (idUsuario));
+
+insert into Usuarios values(NULL, 'bere', '12345');
+insert into Usuarios values(NULL, 'gee', '12345');
+
+
+-----------------------------------------------------------
+insert into cliente values	(	NULL	,	1463147435	,'	David oliver gutierrez	','	San Cristobal Tepontla	',10);
+insert into cliente values	(	NULL	,	1463147435	,'	Ibon gantxegi fernandez	','	San Matias Cocoyotla	',5);
+insert into cliente values	(	NULL	,	 4190663239	,'	Adrián plaza pegueroles	','	San Juan Calvario       ',1);
+insert into cliente values	(	NULL	,	 1524644347	,'	Amaia sánchez arlegui	','	San Gabriel Ometoxtla	',9);
+insert into cliente values	(	NULL	,	3362688913	,'	Nil saez calveras	','	San Andrés Cholula	',7);
+insert into cliente values	(	NULL	,	 2635376102	,'	Verónica pablo fontecha	','	Ciudad de Puebla Centro	',2);
+insert into cliente values	(	NULL	,	4111222415	,'	Pedro hernando callejo	','	San Luis Tehuiloyocan 	',6);
+insert into cliente values	(	NULL	,	2182033399	,'	Jorge lázaro farré	','	Santa Maria Xixitla	',8);
+insert into cliente values	(	NULL	,	3273761324	,'	Eva álvarez roca	','	Cerrito de Guadalupe	',1);
+insert into cliente values	(	NULL	,	 1209025956	,'	Cristina sainz martínez	','	San Pedro Cholula Centro',3);
+
+
+insert into repartidor values	(	1	,	1463147435	,'	Laura  rodríguez torres	');
+insert into repartidor values	(	2	,	1463147435	,'	Gerardo nava dionicio	');
+insert into repartidor values	(	3	,	 4190663239	,'	Adriana marcela rey sanchez	');
+
+insert into pedido values	(	1	,'	Papas			',25	);
+insert into pedido values	(	2	,'	Papas con queso	',		35	);
+insert into pedido values	(	3	,'	Cajita Feliz	',		38	);
+insert into pedido values	(	4	,'	Hamburguesa 	',		30	);
+insert into pedido values	(	5	,'	Hamburguesa doble',60	);
+insert into pedido values	(	6	,'	Hamburguesa especial',48);
+insert into pedido values	(	7	,'	Hamburguesa + papas c/Queso',55);
+insert into pedido values	(	8	,'	Hamburguesa + papas  ',	20);
+insert into pedido values	(	9	,'	Hamburguesa + papas + Fanta de Fresa',25);
+insert into pedido values	(	10	,'	Hamburguesa + papas + Coca Cola	',80);
+
+
+insert into vehiculo values	(	1	,'	Motocicleta Yamaha	'	);
+insert into vehiculo values	(	2	,'	Motociclea italika verde	'	);
+insert into vehiculo values	(	3	,'	Motocicleta italika azul	'	);
+insert into vehiculo values	(	4	,'	Scooter ROJO	'	);
+insert into vehiculo values	(	5	,'	Scooter negro	'	);
+insert into vehiculo values	(	6	,'	Scooter azul	'	);
+insert into vehiculo values	(	7	,'	Bicibleta azul	'	);
+insert into vehiculo values	(	8	,'	Bicicleta verde	'	);
+insert into vehiculo values	(	9	,'	Biciclea negra	'	);
+insert into vehiculo values	(	10	,'	Coche beat 	'	);
+					'	
+
+
+
